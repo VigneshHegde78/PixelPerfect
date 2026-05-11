@@ -139,7 +139,8 @@ ul {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    background-color: rgba(250, 251, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.11);
 }
 
 .header-inner {
@@ -326,6 +327,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    text-align: left;
 }
 
 .feature-list li {
@@ -333,6 +335,10 @@ ul {
     align-items: center;
     gap: 15px;
     font-size: 1.125rem;
+}
+
+.check-icon {
+    flex-shrink: 0;
 }
 
 .hero-buttons {
@@ -351,99 +357,11 @@ ul {
     height: auto;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     transition: transform var(--transition-smooth);
 }
 
 .hero-image:hover {
     transform: scale(1.02);
-}
-
-/* Floating Cards */
-.floating-card {
-    position: absolute;
-    background: var(--bg-card);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.trusted-card {
-    bottom: 40px;
-    left: -40px;
-    animation-delay: 0s;
-}
-
-.rating-card {
-    top: 20px;
-    right: -20px;
-    animation-delay: 2s;
-}
-
-.icon-box {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.icon-box img {
-    width: 80%;
-    height: 80%;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-}
-
-.trusted-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.trusted-label {
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-
-.trusted-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1.1;
-}
-
-.rating-number {
-    font-family: var(--font-accent);
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--primary);
-}
-
-.rating-details {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.rating-label {
-    font-weight: 600;
 }
 
 /* Why Compliance Section */
@@ -502,7 +420,7 @@ ul {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    background-color: var(--bg-main);
+    background-color: var(--white);
     padding: 24px;
     border-radius: 12px;
     border: 1px solid var(--primary-light);
@@ -518,7 +436,6 @@ ul {
 .feature-icon {
     width: 48px;
     height: 48px;
-    background-color: var(--primary);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -529,7 +446,7 @@ ul {
 .feature-icon img {
     width: 60%;
     height: 60%;
-    filter: brightness(0) invert(1);
+    color: var(--primary);
 }
 
 .feature-text h3 {
@@ -559,21 +476,11 @@ ul {
     }
     
     .feature-list {
-        align-items: center;
+        align-items: flex-start;
     }
     
     .hero-buttons {
         justify-content: center;
-    }
-    
-    .trusted-card {
-        bottom: 20px;
-        left: 10px;
-    }
-    
-    .rating-card {
-        top: 20px;
-        right: 10px;
     }
 }
 
@@ -618,17 +525,5 @@ ul {
 }
 
 @media (max-width: 480px) {
-    .floating-card {
-        transform: scale(0.8);
-    }
-    
-    .trusted-card {
-        bottom: 10px;
-        left: -10px;
-    }
-    
-    .rating-card {
-        top: 10px;
-        right: -10px;
-    }
+    /* Additional mobile adjustments if needed */
 }
